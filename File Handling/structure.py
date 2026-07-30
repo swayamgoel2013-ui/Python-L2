@@ -6,12 +6,14 @@
 # | Prakash |  30 |  85  |
 # +---------+-----+------+
 
+# This is how you store this table in row major format
 row_major = [
     {'Name': 'Swayam', 'Age': 13, 'Marks': 67},
     {'Name': 'Ebad', 'Age': 25, 'Marks': 91},
     {'Name': 'Prakash', 'Age': 30, 'Marks': 85},
 ]
 
+# This is how you store this table in column major format
 col_major = {
     'Name':  ['Swayam', 'Ebad', 'Prakash'],
     'Age':   [13, 25, 30],
