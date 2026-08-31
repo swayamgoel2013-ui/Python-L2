@@ -1,11 +1,11 @@
 def read_csv(filePath, method="col"):
     if(method == 'col'):
         # read csv in column major form : dict of lists
-        table = dict()
         file = open(filePath, "r")
-        headers = file.readline()
-        headers = headers.strip().split(",")
+        table = dict()
+        headers = file.readline().strip().split(",")
         col_count = len(headers)
+        
         for hdr in headers:
             table[hdr] = list()
         for line in file:
@@ -16,8 +16,8 @@ def read_csv(filePath, method="col"):
         return table
     if(method == 'row'):
         # read csv in row major form : list of dicts
-        table = list()
         file = open(filePath, "r")
+        table = list()
         headers = file.readline()
         headers = headers.strip().split(",")
         col_count = len(headers)
