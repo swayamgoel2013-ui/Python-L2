@@ -43,3 +43,11 @@ def show_table(table):
         for col in table:
             print(f"{col} : {table[col]}") 
 
+if __name__ == "__main__":
+    table = read_csv("data.csv", "row")
+    print("\nTable:")
+    show_table(table)
+
+    table = read_csv("data.csv", "col")
+    print("\nTable:")
+    show_table(table)
