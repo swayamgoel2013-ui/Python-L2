@@ -36,12 +36,16 @@ def read_csv(filePath, method="col"):
 def show_table(table):
     if(isinstance(table, list)):
         # row major form detected
+        print("[")
         for row in table:
-            print(f"{row}")
+            print(f"  {row}")
+        print("]")
     if(isinstance(table, dict)):
         # column major form detected
+        print("{")
         for col in table:
-            print(f"{col} : {table[col]}") 
+            print(f"  {col} : {table[col]}") 
+        print("}")
 
 if __name__ == "__main__":
     table = read_csv("data.csv", "row")

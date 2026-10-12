@@ -1,4 +1,4 @@
-name,type_1,type_2,HP,phAtk,phDef,spAtk,spDef,speed,BST,evolves_from,evolves_into,height,weight,catch_rate,base_exp,item_1,item_2,gender_ratio,egg_cycles,growth_rate,egg_group_1,egg_group_2
+species_ID,type_1,type_2,HP,phAtk,phDef,spAtk,spDef,speed,BST,evolves_from,evolves_into,height,weight,catch_rate,base_exp,item_1,item_2,gender_ratio,egg_cycles,growth_rate,egg_group_1,egg_group_2
 CHIKORITA,GRASS,...,40,50,65,50,65,45,315,...,BAYLEEF,211,140,45,64,NO_ITEM,...,F12_5,20,MEDIUM_SLOW,MONSTER,PLANT
 BAYLEEF,GRASS,...,65,65,80,65,80,65,420,CHIKORITA,MEGANIUM,311,350,45,141,NO_ITEM,...,F12_5,20,MEDIUM_SLOW,MONSTER,PLANT
 MEGANIUM,GRASS,FAIRY,80,80,110,75,110,75,530,BAYLEEF,...,511,2220,45,208,NO_ITEM,...,F12_5,20,MEDIUM_SLOW,MONSTER,PLANT

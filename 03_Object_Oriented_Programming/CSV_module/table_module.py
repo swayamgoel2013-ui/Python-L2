@@ -1,20 +1,26 @@
 class Table:
-    def __init__(self, filePath):
-        file = open(filePath, "r")
-        self.columns = file.readline().strip().split(",")
-        self.col_count = len(self.columns)
+    def __init__(self, source):
+        if(isinstance(source, str)):
+            file = open(source, "r")
+            self.columns = file.readline().strip().split(",")
+            self.col_count = len(self.columns)
 
-        self.table = {}
-        for col in self.columns:
-            self.table[col] = []
+            self.table = {}
+            for col in self.columns:
+                self.table[col] = []
 
-        self.row_count = 0
-        for line in file:
-            values = line.strip().split(",")
-            self.row_count += 1
-            for (i,header) in enumerate(self.columns):
-                self.table[header].append(values[i])
-        file.close()
+            self.row_count = 0
+            for line in file:
+                values = line.strip().split(",")
+                self.row_count += 1
+                for (i,header) in enumerate(self.columns):
+                    self.table[header].append(values[i])
+            file.close()
+        if(isinstance(source, dict)):
+            self.columns = list(source.keys())
+            self.col_count = len(self.columns)
+            self.table = source
+            self.row_count = len(source[self.columns[0]])
         
     def show(self, filePath = "output.txt"):
         widths = {}
@@ -55,10 +61,14 @@ class Table:
 
 if __name__ == "__main__":
     pokedex = Table("dataset.csv")
-    # print("Table size = ", pokedex.get_size())
-    # pokedex.show()
-
+    print("Table size = ", pokedex.get_size())
     pokedex.show()
+
     stats = pokedex.get_columns(["species_ID", "HP", "phAtk", "phDef"])
-    print("Stats size = ", stats.get_size())
+    print("Stats table size = ", stats.get_size())
+    stats.show()
+
+    starters = pokedex.get_rows(range(9))
+    print("Starters table size = ", starters.get_size())
+    starters.show()
 
